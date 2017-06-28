@@ -1,0 +1,8 @@
+cpy 3 a
+inc a
+inc b
+dec a
+jnz 1 2
+dec a
+dec b
+inc a

@@ -1,19 +1,20 @@
-# Assembunny
+# assembunny
+### How to run it 
 
-**TODO: Add description**
+Load the app
 
-## Installation
-
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `assembunny` to your list of dependencies in `mix.exs`:
-
-```elixir
-def deps do
-  [{:assembunny, "~> 0.1.0"}]
-end
+```
+iex -S mix
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/assembunny](https://hexdocs.pm/assembunny).
+For part 1
 
+```
+Assembunny.part_one
+```
+
+For part 2
+
+```
+Assembunny.part_one
+```

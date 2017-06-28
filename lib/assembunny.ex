@@ -1,10 +1,11 @@
 defmodule Assembunny do
   alias Registers
 
-  def part_one, do: run(c: 0)
-  def part_two, do: run(c: 1)
-  defp run(initialize_register) do
-    instructions = input()
+  def part_one(file \\ "./data/input.txt"), do:  run(%{c: 0}, file)
+  def part_two(file \\ "./data/input.txt"), do:  run(%{c: 1}, file)
+
+  defp run(initialize_register, file) do
+    instructions = input(file)
     {:ok, registers} = Registers.start_link initialize_register
     do_run(registers, 0, instructions) 
   end
@@ -15,11 +16,11 @@ defmodule Assembunny do
           address = pc + offset
           do_run(registers, address, instructions)
         true ->
-          IO.puts "****registers: #{inspect Registers.get registers} ****"
+          Registers.get registers
     end
   end
-  defp input do
-    "./input.txt"
+  defp input(file) do
+    file
     |> File.stream!
     |> Stream.map(&String.strip/1)
     |> Stream.map(&String.split(&1, " "))
