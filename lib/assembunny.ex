@@ -1,21 +1,5 @@
 defmodule Assembunny do
   alias Registers
-    
-    #@x1  %{0 => {:cpy, 3, :a},
-    #1 => {:inc, :a},
-    #2 => {:inc, :b},
-    #3 => {:dec, :a},
-    #4 => {:jnz, :a, -2},
-    #5 => {:dec, :a}}
-
-    #@x2  %{0 => {:cpy, 3, :a},
-    #1 => {:inc, :a},
-    #2 => {:inc, :b},
-    #3 => {:dec, :a},
-    #4 => {:jnz, 1, 2},
-    #5 => {:dec, :a},
-    #6 => {:dec, :b},
-    #7 => {:inc, :a}}
 
   def part_one, do: run(c: 0)
   def part_two, do: run(c: 1)
