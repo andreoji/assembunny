@@ -6,17 +6,16 @@ defmodule Assembunny do
 
   defp run(initialize_register, file) do
     instructions = input(file)
-    {:ok, registers} = Registers.start_link initialize_register
+    registers = Registers.start initialize_register
     do_run(registers, 0, instructions) 
   end
   defp do_run(registers, pc, instructions) do
       case (pc >= (length Map.keys(instructions))) do
         false ->
-          offset = Registers.execute(registers, instructions[pc])
-          address = pc + offset
-          do_run(registers, address, instructions)
+          {registers, offset} = Registers.execute(registers, instructions[pc])
+          do_run(registers, (pc + offset), instructions)
         true ->
-          Registers.get registers
+          registers
     end
   end
   defp input(file) do

@@ -3,7 +3,7 @@ defmodule AssembunnyTest do
   alias Assembunny
 
   test "part_one" do
-    assert %{a: -1, b: 4, c: 0, d: 0} == Assembunny.part_one "./data/input_1.txt"
-    assert %{a: 4, b: 0, c: 0, d: 0} == Assembunny.part_one "./data/input_2.txt"
+    assert %Registers{a: -1, b: 4, c: 0, d: 0} == Assembunny.part_one "./data/input_1.txt"
+    assert %Registers{a: 4, b: 0, c: 0, d: 0} == Assembunny.part_one "./data/input_2.txt"
   end
 end
