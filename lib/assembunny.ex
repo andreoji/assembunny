@@ -10,12 +10,12 @@ defmodule Assembunny do
     do_run(registers, 0, instructions) 
   end
   defp do_run(registers, pc, instructions) do
-      case (pc >= (length Map.keys(instructions))) do
-        false ->
-          {registers, offset} = Registers.execute(registers, instructions[pc])
-          do_run(registers, (pc + offset), instructions)
-        true ->
-          registers
+    case (pc >= (length Map.keys(instructions))) do
+      false ->
+        {registers, offset} = Registers.execute(registers, instructions[pc])
+        do_run(registers, (pc + offset), instructions)
+      true ->
+        registers
     end
   end
   defp input(file) do
